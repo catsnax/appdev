@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body class="bg-[#f4f5fa]">
+    <!-- Top Bar -->
+    <div id="Navigation-Bar" class="flex items-center space-x-24 sticky top-0 bg-[#f4f5fa] text-[#3c6ff0]">
+        <div id="Nav-Logo" class="flex items-center mr-auto p-[10px] pl-[2%]">
+            <div class="text-[250%]"> AdDU </div>
+            <div class="font-bold text-[250%]"> MUNCH </div>
+        </div> 
+
+        <div class="font-bold flex gap-16 text-[110%] pr-[3%]">
+            <div id="Top-LogIn" class="text-[#3c6ff0]"> STORE </div>
+        </div>
+    </div>
+        
+    <div class="pt-[10px]">
+
+        <div class="pt-[10px] flex-col h-[120px] max-w-[1200px] mx-auto text-[#f4f5fa] bg-gradient-to-br from-[#4e7ffa] to-[#3c6ff0] p-[10px] rounded-2xl" 
+        style="background-image: url('assets/paa.jpg')">
+
+            <div class=" h-8">
+                <span class="text-[200%] items-center pl-[500px] font-bold"> Penong's </span>
+                <br><span class="text-[100%] pl-[500px] text-white"> 4.5 km away | Php 109 minimum</span>
+                <br><span class="text-[100%] pl-[500px] text-white"> Grilled/Filipino</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="flex pt-[50px]">
+        <div class="flex gap-[6%] h-[340px] w-[1200px] mx-auto">
+            
+            <!-- PAA -->
+            <div class="h-[150px] w-[350px] rounded-2xl">
+                <div class="hover:scale-110 transition-all">
+
+                    <div class="h-[250px] w-[350px] bg-cover bg-center h-64 rounded-t-2xl" style="background-image: url('assets/paa.jpg')"> </div>
+
+                    <div class="flex-col h-[100px] w-[350px] bg-[#ffffff] rounded-b-2xl py-[10px] px-[15px]"> 
+                        <div class="font-bold text-[120%] text-center">
+                            Paa
+                        </div>
+
+                        <div class=" text-[120%] text-center text-gray-500">
+                            Php 150.00
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PAA -->
+            <div class="h-[150px] w-[350px] rounded-2xl">
+                <div class="hover:scale-110 transition-all">
+
+                    <div class="h-[250px] w-[350px] bg-cover bg-center h-64 rounded-t-2xl" style="background-image: url('assets/paa.jpg')"> </div>
+
+                    <div class="flex-col h-[100px] w-[350px] bg-[#ffffff] rounded-b-2xl py-[10px] px-[15px]"> 
+                        <div class="font-bold text-[120%] text-center">
+                            Paa
+                        </div>
+
+                        <div class=" text-[120%] text-center text-gray-500">
+                            Php 150.00
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PAA -->
+            <div class="h-[150px] w-[350px] rounded-2xl">
+                <div class="hover:scale-110 transition-all">
+
+                    <div class="h-[250px] w-[350px] bg-cover bg-center h-64 rounded-t-2xl" style="background-image: url('assets/paa.jpg')"> </div>
+
+                    <div class="flex-col h-[100px] w-[350px] bg-[#ffffff] rounded-b-2xl py-[10px] px-[15px]"> 
+                        <div class="font-bold text-[120%] text-center">
+                            Paa
+                        </div>
+
+                        <div class=" text-[120%] text-center text-gray-500">
+                            Php 150.00
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="font-bold h-[50px] mb-[10px] text-center text-xl pt-[15%]">
+
+        <div class="flex-col h-[340px] w-[1200px] mx-auto">
+            <div class="text-[220%]"> Leave a review </div>
+            <div class="text-[100%] pt-[25px] pb-[5px]"> Click the stars to rate our food </div>
+            <div id = "newcontainer" class="text-[90%] pb-[20px]"></div>
+
+            <input class="font-semibold pl-[20px] h-[50px] w-[500px] outline-none focus:ring-0 rounded-xl" type="text" id="textInput" placeholder="Leave a message">
+
+            <div class="pt-[20px]">
+                <div class="bg-[#3c6ff0] h-[50px] w-[250px] rounded-xl py-[10px] mx-auto">
+                    <button id = "submitButton" class="text-[#ffffff] text-[90%]"> SUBMIT REVIEW </button>
+                </div>
+            </div>
+
+        </div>
+        
+        
+        <div class="pb-[200px]">
+            <div id="reviews" class="bg-[#3c6ff0] flex-col gap-4 mx-auto"></div>
+        </div>
+        
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        //localStorage.clear();
+        //localStorage.setItem("number", 0);
+        container = document.getElementById("newcontainer");
+
+        rating = 0;
+        first = document.createElement("i");
+        second = document.createElement("i");
+        third = document.createElement("i");
+        fourth = document.createElement("i");
+        fifth = document.createElement("i");
+
+        list = [first, second, third, fourth, fifth]
+
+        for(i = 0; i<list.length; i++){
+            list[i].classList.add('fa', 'fa-star-o', 'text-[#fad000]', 'text-[200%]');
+            container.append(list[i]);
+        }
+
+        first.addEventListener("click", () => {createStar(1, container, list); rating = 1});
+        second.addEventListener("click", () => {createStar(2, container, list); rating = 2})
+        third.addEventListener("click", () => {createStar(3, container, list); rating = 3});
+        fourth.addEventListener("click", () => {createStar(4, container, list); rating = 4});
+        fifth.addEventListener("click", () => {createStar(5, container, list); rating = 5});
+
+
+        function createStar(number, paramContainer, paramList){
+            
+
+            while (paramContainer.hasChildNodes()) {
+            paramContainer.removeChild(paramContainer.firstChild);
+                } 
+                for(i = 0; i < paramList.length; i++){
+
+                paramList[i].classList.remove("fa-star")
+                paramList[i].classList.add('fa-star-o');
+                }
+
+            for(i = 0; i < number; i++){
+
+                paramList[i].classList.remove("fa-star-o")
+                paramList[i].classList.add('fa-star');
+            }
+            
+            for(i = 0; i < list.length; i++){
+                paramContainer.appendChild(paramList[i]);
+            }
+        }
+    </script>
+
+    <script>
+        otherCounter = localStorage.getItem("number");
+        rContainer = document.getElementById("reviews");
+        
+
+        for(i = 0; i < otherCounter; i++){
+            userReview = document.createElement("div");
+            review = localStorage.getItem(i);
+            let myObject = JSON.parse(review);
+            rating = myObject.rating;
+
+            user = document.createElement("div");
+            user.textContent = "Anonymous User";
+
+            newReview = document.createElement("div");
+            newReview.textContent = myObject.text + " - " + rating + " stars";
+
+            
+            rContainer.appendChild(user);
+            rContainer.append(newReview)
+            //createStar(rating, rContainer, newList);
+
+            
+        }
+
+        button = document.getElementById("submitButton");
+        text = document.getElementById("textInput");
+
+        button.addEventListener("click", () =>{
+            counter = localStorage.getItem("number")
+            newReview = {
+            text: text.value,
+            rating : rating,
+            };
+        let stringed = JSON.stringify(newReview);
+        localStorage.setItem(counter, stringed);
+        counter++
+        localStorage.setItem("number", counter);
+
+        console.log(localStorage);
+        }) 
+   
+    </script>
+
+</body>
+</html>
